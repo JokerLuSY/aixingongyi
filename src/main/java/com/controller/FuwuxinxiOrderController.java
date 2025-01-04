@@ -169,8 +169,8 @@ public class FuwuxinxiOrderController {
     * 审核
     */
     @RequestMapping("/shenhe")
-    public R shenhe(@RequestBody FuwuxinxiOrderEntity fuwuxinxiOrder, HttpServletRequest request){
-        logger.debug("shenhe方法:,,Controller:{},,fuwuxinxiOrder:{}",this.getClass().getName(),fuwuxinxiOrder.toString());
+    public R shenhe(@RequestBody FuwuxinxiOrderEntity fuwuxinxiOrder, HttpServletRequest request) {
+        logger.debug("shenhe方法:,,Controller:{},,fuwuxinxiOrder:{}", this.getClass().getName(), fuwuxinxiOrder.toString());
 
 //        if(fuwuxinxiOrder.getFuwuxinxiOrderYesnoTypes() == 2){//通过
 //            fuwuxinxiOrder.setFuwuxinxiOrderTypes();
@@ -178,6 +178,21 @@ public class FuwuxinxiOrderController {
 //            fuwuxinxiOrder.setFuwuxinxiOrderTypes();
 //        }
         fuwuxinxiOrderService.updateById(fuwuxinxiOrder);//审核
+        //申请通过更新身份
+        if(fuwuxinxiOrder.getFuwuxinxiOrderYesnoTypes()==2){
+            FuwuxinxiOrderEntity fuwuxinxiOrderNew = fuwuxinxiOrderService.selectById(fuwuxinxiOrder.getId());
+            //get yonghu
+            YonghuEntity yonghuEntity = yonghuService.selectById(fuwuxinxiOrderNew.getYonghuId());
+
+            if (yonghuEntity != null) {
+                //use fuwuxinxi_order_types update yonghu
+                yonghuEntity.setYonghuTypes(fuwuxinxiOrderNew.getFuwuxinxiOrderTypes());
+                yonghuService.updateById(yonghuEntity);//根据id更新
+                return R.ok();
+            } else {
+                return R.error(511, "账户或者联系方式已经被使用");
+            }
+        }
         return R.ok();
     }
 

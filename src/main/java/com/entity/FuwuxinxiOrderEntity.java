@@ -57,7 +57,7 @@ public class FuwuxinxiOrderEntity<T> implements Serializable {
     /**
      * 活动类型的值
      */
-    private String fuwuxinxiOrderValue;
+    //private String fuwuxinxiOrderValue;
 
     /**
      * 服务信息
@@ -194,16 +194,16 @@ public class FuwuxinxiOrderEntity<T> implements Serializable {
     /**
      * 设置：活动类型Text
      */
-    public String getFuwuxinxiOrderValue() {
-        return fuwuxinxiOrderValue;
-    }
+    //public String getFuwuxinxiOrderValue() {
+        //return fuwuxinxiOrderValue;
+    //}
     /**
      * 获取：活动类型Text
      */
 
-    public void setFuwuxinxiOrderValue(String fuwuxinxiOrderValue) {
-        this.fuwuxinxiOrderValue = fuwuxinxiOrderValue;
-    }
+    //public void setFuwuxinxiOrderValue(String fuwuxinxiOrderValue) {
+        //this.fuwuxinxiOrderValue = fuwuxinxiOrderValue;
+    //}
 
 
     /**

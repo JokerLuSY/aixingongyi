@@ -337,10 +337,10 @@
 
             // 提交
             form.on('submit(thisSubmit)', function (data) {
-                if(data.field.fuwuxinxiOrderTypes=="团体"){
-                    data.field.fuwuxinxiOrderTypes=2;
-                }else{
-                    data.field.fuwuxinxiOrderTypes=1;
+                for(var type of vue.yonghuTypesList){
+                    if(data.field.fuwuxinxiOrderTypes==type.indexName){
+                        data.field.fuwuxinxiOrderTypes=type.codeIndex;
+                    }
                 }
                 data = data.field;
                 data["yonghuId"]= localStorage.getItem("userid");

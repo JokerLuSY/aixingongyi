@@ -430,7 +430,7 @@
         data: {
             swiperList: [],
             fuwuxinxiOrderYesnoTypesList: [],
-
+            yonghuTypesList: [],
             //查询条件
             searchForm: {
                 page: 1
@@ -496,6 +496,13 @@
                     limit: 8,
                     fuwuxinxiOrderTypes: (vue.fuwuxinxiOrderTypes == 0)?null:vue.fuwuxinxiOrderTypes
                 }, function(res) {
+                    for (var item of res.data.list) {
+                        for(var type of vue.yonghuTypesList){
+                            if(item.fuwuxinxiOrderTypes==type.codeIndex){
+                                item.fuwuxinxiOrderTypes=type.indexName;
+                            }
+                        }
+                    }
                     vue.dataList = res.data.list;
                     // 分页
                     layui.laypage.render({
@@ -675,13 +682,21 @@
                });
            }
 
-
+        yonghuTypesSelect();
         // 获取列表数据
         http.request('fuwuxinxiOrder/page', 'get',{
             page: 1,
             limit:  vue.searchForm.limit,
             fuwuxinxiOrderTypes: (vue.fuwuxinxiOrderTypes == 0)?null:vue.fuwuxinxiOrderTypes
         }, function(res) {
+
+            for (var item of res.data.list) {
+                for(var type of vue.yonghuTypesList){
+                    if(item.fuwuxinxiOrderTypes==type.codeIndex){
+                        item.fuwuxinxiOrderTypes=type.indexName;
+                    }
+                }
+            }
             vue.dataList = res.data.list;
             // 分页
             laypage.render({
@@ -712,7 +727,15 @@
            });
        }
     });
-
+    //身份的查询
+    function yonghuTypesSelect() {
+        //填充下拉框选项
+        layui.http.request("dictionary/page?page=1&limit=100&sort=&order=&dicCode=yonghu_types", "GET", {}, (res) => {
+            if(res.code == 0){
+                vue.yonghuTypesList = res.data.list;
+            }
+        });
+    }
     window.xznSlide = function () {
         jQuery(".banner").slide({mainCell: ".bd ul", autoPlay: true, interTime: 5000});
         jQuery("#ifocus").slide({

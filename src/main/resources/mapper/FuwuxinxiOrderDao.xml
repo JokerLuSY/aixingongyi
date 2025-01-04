@@ -10,6 +10,7 @@
         ,a.fuwuxinxi_order_number as fuwuxinxiOrderNumber
         ,a.fuwuxinxi_order_text as fuwuxinxiOrderText
         ,a.fuwuxinxi_order_yesno_types as fuwuxinxiOrderYesnoTypes
+        ,a.fuwuxinxi_order_types as fuwuxinxiOrderTypes
         ,a.fuwuxinxi_order_yesno_text as fuwuxinxiOrderYesnoText
         ,a.create_time as createTime
     </sql>

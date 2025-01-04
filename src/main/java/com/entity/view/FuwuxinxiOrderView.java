@@ -23,6 +23,8 @@ public class FuwuxinxiOrderView extends FuwuxinxiOrderEntity implements Serializ
 		*/
 		private String fuwuxinxiOrderYesnoValue;
 
+		private String fuwuxinxiOrderValue;
+
 
 
 		//级联表 fuwuxinxi
@@ -114,6 +116,19 @@ public class FuwuxinxiOrderView extends FuwuxinxiOrderEntity implements Serializ
 			public void setFuwuxinxiOrderYesnoValue(String fuwuxinxiOrderYesnoValue) {
 				this.fuwuxinxiOrderYesnoValue = fuwuxinxiOrderYesnoValue;
 			}
+
+	/**
+	 * 获取： 申请状态的值
+	 */
+	public String getFuwuxinxiOrderValue() {
+		return fuwuxinxiOrderValue;
+	}
+	/**
+	 * 设置： 申请状态的值
+	 */
+	public void setFuwuxinxiOrderValue(String fuwuxinxiOrderValue) {
+		this.fuwuxinxiOrderValue = fuwuxinxiOrderValue;
+	}
 
 
 
