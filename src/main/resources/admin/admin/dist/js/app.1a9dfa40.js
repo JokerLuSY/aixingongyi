@@ -13076,6 +13076,24 @@
                 attrs : {
                     sortable : self.contents.tableSortable,
                     align : self.contents.tableAlign,
+                    prop : "fuwuxinxiOrderValue",
+                    "header-align" : "center",
+                    label : "\u6d3b\u52a8\u7c7b\u578b"
+                },
+                scopedSlots : self._u([{
+                    key : "default",
+                    /**
+                     * @param {number} button
+                     * @return {?}
+                     */
+                    fn : function(button) {
+                        return[null != button.row.fuwuxinxiOrderValue && button.row.fuwuxinxiOrderValue.length > 10 ? callback("span", [self._v(" " + self._s(button.row.fuwuxinxiOrderValue.slice(0, 10)) + "... ")]) : callback("span", [self._v(" " + self._s(button.row.fuwuxinxiOrderValue) + " ")])];
+                    }
+                }], null, false, 292642236)
+            }), callback("el-table-column", {
+                attrs : {
+                    sortable : self.contents.tableSortable,
+                    align : self.contents.tableAlign,
                     prop : "fuwuxinxiOrderYesnoTypes",
                     "header-align" : "center",
                     label : "\u7533\u8bf7\u72b6\u6001"
