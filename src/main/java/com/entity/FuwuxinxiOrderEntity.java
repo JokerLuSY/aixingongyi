@@ -13,6 +13,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.poi.hslf.record.CString;
 import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.apache.commons.beanutils.BeanUtils;
@@ -53,6 +54,10 @@ public class FuwuxinxiOrderEntity<T> implements Serializable {
 
     private Integer id;
 
+    /**
+     * 活动类型的值
+     */
+    private String fuwuxinxiOrderValue;
 
     /**
      * 服务信息
@@ -185,6 +190,21 @@ public class FuwuxinxiOrderEntity<T> implements Serializable {
     public void setFuwuxinxiOrderTypes(Integer fuwuxinxiOrderTypes) {
         this.fuwuxinxiOrderTypes = fuwuxinxiOrderTypes;
     }
+
+    /**
+     * 设置：活动类型Text
+     */
+    public String getFuwuxinxiOrderValue() {
+        return fuwuxinxiOrderValue;
+    }
+    /**
+     * 获取：活动类型Text
+     */
+
+    public void setFuwuxinxiOrderValue(String fuwuxinxiOrderValue) {
+        this.fuwuxinxiOrderValue = fuwuxinxiOrderValue;
+    }
+
 
     /**
 	 * 设置：备注
