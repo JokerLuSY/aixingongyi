@@ -77,6 +77,13 @@ public class FuwuxinxiOrderEntity<T> implements Serializable {
 
     private Integer fuwuxinxiOrderNumber;
 
+    /**
+     * 活动类型
+     */
+    @TableField(value = "fuwuxinxi_order_types")
+
+    private Integer fuwuxinxiOrderTypes;
+
 
     /**
      * 备注
@@ -164,6 +171,21 @@ public class FuwuxinxiOrderEntity<T> implements Serializable {
     public void setFuwuxinxiOrderNumber(Integer fuwuxinxiOrderNumber) {
         this.fuwuxinxiOrderNumber = fuwuxinxiOrderNumber;
     }
+
+    /**
+     * 设置：活动类型
+     */
+    public Integer getFuwuxinxiOrderTypes() {
+        return fuwuxinxiOrderTypes;
+    }
+    /**
+     * 获取：活动类型
+     */
+
+    public void setFuwuxinxiOrderTypes(Integer fuwuxinxiOrderTypes) {
+        this.fuwuxinxiOrderTypes = fuwuxinxiOrderTypes;
+    }
+
     /**
 	 * 设置：备注
 	 */
@@ -226,8 +248,9 @@ public class FuwuxinxiOrderEntity<T> implements Serializable {
             ", fuwuxinxiOrderNumber=" + fuwuxinxiOrderNumber +
             ", fuwuxinxiOrderText=" + fuwuxinxiOrderText +
             ", fuwuxinxiOrderYesnoTypes=" + fuwuxinxiOrderYesnoTypes +
-            ", fuwuxinxiOrderYesnoText=" + fuwuxinxiOrderYesnoText +
-            ", createTime=" + createTime +
+            ", fuwuxinxiOrderYesnoText=" + fuwuxinxiOrderYesnoText + ", fuwuxinxiOrderTypes=" + fuwuxinxiOrderTypes +
+
+                ", createTime=" + createTime +
         "}";
     }
 }

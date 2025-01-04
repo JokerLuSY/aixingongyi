@@ -55,6 +55,10 @@ public class FuwuxinxiOrderModel implements Serializable {
      * 申请状态
      */
     private Integer fuwuxinxiOrderYesnoTypes;
+    /**
+     * 活动类型
+     */
+    private Integer fuwuxinxiOrderTypes;
 
 
     /**
@@ -127,6 +131,22 @@ public class FuwuxinxiOrderModel implements Serializable {
     public void setFuwuxinxiOrderNumber(Integer fuwuxinxiOrderNumber) {
         this.fuwuxinxiOrderNumber = fuwuxinxiOrderNumber;
     }
+
+    /**
+     * 获取：活动类型
+     */
+    public Integer getfuwuxinxiOrderTypes() {
+        return fuwuxinxiOrderTypes;
+    }
+
+
+    /**
+     * 设置：活动类型
+     */
+    public void setfuwuxinxiOrderTypes(Integer fuwuxinxiOrderTypes) {
+        this.fuwuxinxiOrderTypes = fuwuxinxiOrderTypes;
+    }
+
     /**
 	 * 获取：备注
 	 */
